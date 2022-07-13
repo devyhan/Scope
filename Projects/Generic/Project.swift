@@ -2,7 +2,7 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.framework(
-  name: "Splash",
+  name: "Generic",
   platform: .iOS,
   additionalTargets: [
     "ThirdPartyLibrary"

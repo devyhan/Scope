@@ -10,7 +10,7 @@ let project = Project.app(
   name: "App",
   platform: .iOS,
   additionalProjects: [
-    "Splash"
+    "Generic"
   ],
   additionalTargets: [
   ]

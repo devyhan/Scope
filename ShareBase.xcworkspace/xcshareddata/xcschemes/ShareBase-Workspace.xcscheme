@@ -112,6 +112,34 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E353085835FD70D05B028E79"
+               BuildableName = "Generic.framework"
+               BlueprintName = "Generic"
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2B51088EF36F4EABF775A647"
+               BuildableName = "GenericTests.xctest"
+               BlueprintName = "GenericTests"
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "210AE3919E1578F6373794C3"
                BuildableName = "IdentifiedCollections.framework"
                BlueprintName = "IdentifiedCollections"
@@ -154,34 +182,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B281B9912FBE9374CDC0824D"
-               BuildableName = "Splash.framework"
-               BlueprintName = "Splash"
-               ReferencedContainer = "container:Projects/Splash/Splash.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9165A57EA536D2AB06CC46C8"
-               BuildableName = "SplashTests.xctest"
-               BlueprintName = "SplashTests"
-               ReferencedContainer = "container:Projects/Splash/Splash.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "3AF3F349EB5391BC0A46BC8C"
                BuildableName = "TCACoordinators.framework"
                BlueprintName = "TCACoordinators"
@@ -196,10 +196,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0371D66A56382A8B897D7314"
+               BlueprintIdentifier = "3CC135827D5F04608CF88C95"
                BuildableName = "ThirdPartyLibrary.framework"
                BlueprintName = "ThirdPartyLibrary"
-               ReferencedContainer = "container:Projects/Splash/Splash.xcodeproj">
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -238,10 +238,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9165A57EA536D2AB06CC46C8"
-               BuildableName = "SplashTests.xctest"
-               BlueprintName = "SplashTests"
-               ReferencedContainer = "container:Projects/Splash/Splash.xcodeproj">
+               BlueprintIdentifier = "2B51088EF36F4EABF775A647"
+               BuildableName = "GenericTests.xctest"
+               BlueprintName = "GenericTests"
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

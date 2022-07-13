@@ -10,7 +10,6 @@ import ProjectDescription
 let workspace = Workspace(
     name: "ShareBase",
     projects: [
-        "Projects/App",
-        "Projects/Domain"
+        "Projects/App"
     ]
 )

@@ -1,9 +1,9 @@
 import Foundation
 import XCTest
 import ComposableArchitecture
-@testable import Splash
+@testable import Generic
 
-final class SplashTests: XCTestCase {
+final class GenericTests: XCTestCase {
     func testExample() {
         // Add your test here
     }
