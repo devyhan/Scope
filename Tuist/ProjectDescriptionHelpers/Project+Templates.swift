@@ -1,4 +1,5 @@
 import ProjectDescription
+import ProjectEnvironment
 
 extension Project {
   public static func app(name: String, platform: Platform, additionalProjects: [String], additionalTargets: [String]) -> Project {
@@ -14,7 +15,7 @@ extension Project {
     
     return Project(
       name: name,
-      organizationName: "tuist.io",
+      organizationName: env.orgenizationName,
       targets: targets
     )
   }
@@ -30,7 +31,7 @@ extension Project {
     
     return Project(
       name: name,
-      organizationName: "tuist.io",
+      organizationName: env.orgenizationName,
       targets: targets
     )
   }
@@ -42,8 +43,7 @@ extension Project {
       name: name,
       platform: platform,
       product: .framework,
-      bundleId: "io.tuist.\(name)",
-//      infoPlist: .none,
+      bundleId: "\(env.bundleId).\(name)",
       sources: [],
       resources: [],
       dependencies: [
@@ -56,27 +56,30 @@ extension Project {
   }
   
   private static func makeFrameworkTargets(name: String, platform: Platform, dependencies: [TargetDependency] = []) -> [Target] {
-    let sources = Target(name: name,
-                         platform: platform,
-                         product: .framework,
-                         bundleId: "io.tuist.\(name)",
-                         infoPlist: .default,
-                         sources: ["../../Targets/\(name)/Sources/**"],
-                         resources: [],
-                         dependencies: dependencies)
-    let tests = Target(name: "\(name)Tests",
-                       platform: platform,
-                       product: .unitTests,
-                       bundleId: "io.tuist.\(name)Tests",
-                       infoPlist: .default,
-                       sources: ["../../Targets/\(name)/Tests/**"],
-                       resources: [],
-                       dependencies: [.target(name: name)])
+    let sources = Target(
+      name: name,
+      platform: platform,
+      product: .framework,
+      bundleId: "\(env.bundleId).\(name)",
+      infoPlist: .default,
+      sources: ["../../Targets/\(name)/Sources/**"],
+      resources: [],
+      dependencies: dependencies
+    )
+    let tests = Target(
+      name: "\(name)Tests",
+      platform: platform,
+      product: .unitTests,
+      bundleId: "\(env.bundleId).\(name)Tests",
+      infoPlist: .default,
+      sources: ["../../Targets/\(name)/Tests/**"],
+      resources: [],
+      dependencies: [.target(name: name)]
+    )
     return [sources, tests]
   }
   
   private static func makeAppTargets(name: String, platform: Platform, dependencies: [TargetDependency]) -> [Target] {
-    let platform: Platform = platform
     let infoPlist: [String: InfoPlist.Value] = [
       "CFBundleShortVersionString": "1.0",
       "CFBundleVersion": "1",
@@ -88,7 +91,7 @@ extension Project {
       name: name,
       platform: platform,
       product: .app,
-      bundleId: "io.tuist.\(name)",
+      bundleId: "\(env.bundleId).\(name)",
       infoPlist: .extendingDefault(with: infoPlist),
       sources: ["../../Targets/\(name)/Sources/**"],
       resources: ["../../Targets/\(name)/Resources/**"],
@@ -99,12 +102,13 @@ extension Project {
       name: "\(name)Tests",
       platform: platform,
       product: .unitTests,
-      bundleId: "io.tuist.\(name)Tests",
+      bundleId: "\(env.bundleId).\(name)Tests",
       infoPlist: .default,
       sources: ["../../Targets/\(name)/Tests/**"],
       dependencies: [
         .target(name: "\(name)")
-      ])
+      ]
+    )
     return [mainTarget, testTarget]
   }
 }

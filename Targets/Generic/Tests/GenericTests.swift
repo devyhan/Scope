@@ -4,7 +4,18 @@ import ComposableArchitecture
 @testable import Generic
 
 final class GenericTests: XCTestCase {
-    func testExample() {
-        // Add your test here
+  private func testCheckVersion() {
+    // given
+    let store = TestStore(
+      initialState: SplashState(),
+      reducer: splashReducer,
+      environment: SplashEnvironment(mainQueue: .main)
+    )
+    
+    // when
+    store.send(.checkVersion) { state in
+      // then
+      state.isHidden = true
     }
+  }
 }
