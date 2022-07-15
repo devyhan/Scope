@@ -263,8 +263,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				93E9E330FC2CE7458D9C925F /* App */,
 				99DCC7BD0ABB09C467644299 /* AppTests */,
+				93E9E330FC2CE7458D9C925F /* App */,
 			);
 		};
 /* End PBXProject section */
@@ -331,7 +331,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.tuist.AppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scope.AppTests;
 				PRODUCT_NAME = AppTests;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -354,7 +354,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.tuist.App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scope.App;
 				PRODUCT_NAME = App;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -428,7 +428,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.tuist.AppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scope.AppTests;
 				PRODUCT_NAME = AppTests;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -452,7 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.tuist.App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scope.App;
 				PRODUCT_NAME = App;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

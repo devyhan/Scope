@@ -8,7 +8,7 @@
 import ProjectDescription
 
 let workspace = Workspace(
-    name: "ShareBase",
+    name: "Scope",
     projects: [
         "Projects/App"
     ]
