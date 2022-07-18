@@ -10,8 +10,8 @@ import ComposableArchitecture
 import SwiftUI
 
 public struct RootView: View {
-  let store: Store<RootState, RootAction>
-  let statelessViewStore: ViewStore<Void, RootAction>
+  private let store: Store<RootState, RootAction>
+  private let statelessViewStore: ViewStore<Void, RootAction>
   
   public init(store: Store<RootState, RootAction>) {
     self.store = store
@@ -19,11 +19,41 @@ public struct RootView: View {
   }
   
   public var body: some View {
-    WithViewStore(store) { viewStore in
+//    WithViewStore(store) { viewStore in
       ZStack {
-        Text("RootView")
+        
+        // RootCoordinator here..
+        RootCoordinator(
+          store: store.scope(
+            state: \.rootCoordinator,
+            action: RootAction.rootCoordinator
+          )
+        )
+        
+//        ScrollView {
+//          LazyVStack {
+//            ForEach(0...100, id: \.self) { i in
+//              Group {
+//                if i % 2 == 0 {
+//                  Color.cyan.opacity(0.1)
+//                }
+//
+//                if i % 3 == 0 {
+//                  Color.orange.opacity(0.1)
+//                }
+//
+//                if i % 3 == 0 {
+//                  Color.green.opacity(0.1)
+//                }
+//              }
+//              .frame(height: 100)
+//            }
+//          }
+//        }
+//        .navigationBar(title: "⌗ " + viewStore.searchQuery)
+//        .onTapGesture(perform: endEditing)
       }
-    }
+//    }
   }
 }
 

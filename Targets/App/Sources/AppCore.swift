@@ -21,10 +21,12 @@ enum AppAction {}
 extension AppEnvironment {
   static let live: AppEnvironment = {
     let rootEnvironment = RootEnvironment(mainQueue: .main)
+    let settingEnvironment = SettingEnvironment()
     
     return .init(
       mainQueue: .main,
-      rootEnvironment: rootEnvironment
+      rootEnvironment: rootEnvironment,
+      settingEnvironment: settingEnvironment
     )
   }()
 }
@@ -32,14 +34,17 @@ extension AppEnvironment {
 final class AppEnvironment {
   let mainQueue: AnySchedulerOf<DispatchQueue>
   let rootEnvironment: RootEnvironment
+  let settingEnvironment: SettingEnvironment
   
   init(
     mainQueue: AnySchedulerOf<DispatchQueue>,
-    rootEnvironment: RootEnvironment
+    rootEnvironment: RootEnvironment,
+    settingEnvironment: SettingEnvironment
   )
   {
     self.mainQueue = mainQueue
     self.rootEnvironment = RootEnvironment(mainQueue: mainQueue)
+    self.settingEnvironment = SettingEnvironment()
   }
 }
 

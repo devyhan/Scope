@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		02B3CE27B583FE5FFCF18A96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCA37F1092260791671DC5B /* LaunchScreen.storyboard */; };
-		396EACD2B85AFEA005BC6450 /* Generic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 678794BE842FB7C925167838 /* Generic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		396EACD2B85AFEA005BC6450 /* Generic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 678794BE842FB7C925167838 /* Generic.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4D47A4D3294D9E80A20E487B /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334258F46F58529BB953875A /* AppTests.swift */; };
-		81A91ADEE46B87F024565644 /* Generic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678794BE842FB7C925167838 /* Generic.framework */; };
+		81A91ADEE46B87F024565644 /* Generic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678794BE842FB7C925167838 /* Generic.framework */; platformFilter = ios; };
 		88B78854D506A47168D6B00A /* ThirdPartyLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B654558C712AEBAEF8CE5540 /* ThirdPartyLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		97639454D5E33450A0D8185C /* Bundle+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1AF9D0780E6CC42D791F41 /* Bundle+App.swift */; };
 		98E7BFCFAEE5A57335E2A59B /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3362E2C232A5A7EB2C0240 /* AppContainer.swift */; };
@@ -46,8 +46,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				396EACD2B85AFEA005BC6450 /* Generic.framework in Embed Frameworks */,
 				88B78854D506A47168D6B00A /* ThirdPartyLibrary.framework in Embed Frameworks */,
+				396EACD2B85AFEA005BC6450 /* Generic.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,8 +263,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				99DCC7BD0ABB09C467644299 /* AppTests */,
 				93E9E330FC2CE7458D9C925F /* App */,
+				99DCC7BD0ABB09C467644299 /* AppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -348,8 +348,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2CMQV98DW6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Derived/InfoPlists/App.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -357,6 +359,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scope.App;
 				PRODUCT_NAME = App;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -446,8 +449,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2CMQV98DW6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Derived/InfoPlists/App.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +460,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scope.App;
 				PRODUCT_NAME = App;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.6.1;

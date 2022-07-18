@@ -3,8 +3,8 @@ import ComposableArchitecture
 import SwiftUI
 
 public struct SplashView: View {
-  let store: Store<SplashState, SplashAction>
-  let statelessViewStore: ViewStore<Void, SplashAction>
+  private let store: Store<SplashState, SplashAction>
+  private let statelessViewStore: ViewStore<Void, SplashAction>
   
   public init(store: Store<SplashState, SplashAction>) {
     self.store = store
@@ -14,7 +14,7 @@ public struct SplashView: View {
   public var body: some View {
     WithViewStore(store) { viewStore in
       ZStack {
-        Color.white
+        Color.black.ignoresSafeArea()
         Text("Splash")
       }
     }
