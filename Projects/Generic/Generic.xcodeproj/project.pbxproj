@@ -3,23 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		00837D059D5496467ECC823B /* CasePaths.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDBCA25EA104160182772D0 /* CasePaths.framework */; platformFilter = ios; };
 		03D17EF7ACB207072AB78BD6 /* SplashCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E656F20A02A63CA8B65D6 /* SplashCore.swift */; };
-		29BD43B23AC3D6ABAF877C40 /* Generic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D679A2D2951F2C9A4B0CC5 /* Generic.framework */; };
+		29BD43B23AC3D6ABAF877C40 /* Generic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D679A2D2951F2C9A4B0CC5 /* Generic.framework */; platformFilter = ios; };
+		46CCFDEEF1579BCEF20EC8E2 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B6DFFE24F37B995586FB86 /* NavigationBar.swift */; };
 		55A3BE3AC59B269B9EBC1057 /* CustomDump.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3530FED901607D02E3F867 /* CustomDump.framework */; platformFilter = ios; };
 		64BD7FE322C298CF9D721559 /* XCTestDynamicOverlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51336D98B5C9D8656E822DD8 /* XCTestDynamicOverlay.framework */; platformFilter = ios; };
+		7E8DF5B22884E167005EBEE7 /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8DF5B12884E167005EBEE7 /* InstagramView.swift */; };
+		7E8DF5B42884E170005EBEE7 /* InstagramCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8DF5B32884E170005EBEE7 /* InstagramCore.swift */; };
+		7E8DF5B72884F3A4005EBEE7 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8DF5B62884F3A4005EBEE7 /* SettingView.swift */; };
+		7E8DF5B92884F3AB005EBEE7 /* SettingCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8DF5B82884F3AB005EBEE7 /* SettingCore.swift */; };
+		7E8DF5BC2884FC10005EBEE7 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8DF5BB2884FC10005EBEE7 /* DashboardView.swift */; };
+		7E8DF5BE2884FC16005EBEE7 /* DashboardCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8DF5BD2884FC16005EBEE7 /* DashboardCore.swift */; };
 		7EDF568EC64E5A16829CAB69 /* Introspect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270B70FEF3AA14D5A7D55383 /* Introspect.framework */; platformFilter = ios; };
 		895022B1981FC72EE1DC6C65 /* FlowStacks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85517BC75EC97939A8E80A9D /* FlowStacks.framework */; platformFilter = ios; };
 		975C026ED4CF7529F85932C2 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD0A7EFF1C03468E6A858B4 /* SplashView.swift */; };
 		97CC04BEECDAE80514C127C0 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980AD23DC7900C09AEFEC63 /* RootView.swift */; };
+		A62FB5EB06CA8151ABF524F2 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2FDA1E26AD0F0B30D722E6 /* BlurView.swift */; };
 		AC13C2D37A209CE7CDECDFF1 /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F2C7A6E195E37831CFD4ED /* ComposableArchitecture.framework */; platformFilter = ios; };
 		AF68CC87A914D38B6DEA58B7 /* ThirdPartyLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9B70D4E52FBDC9347132F1 /* ThirdPartyLibrary.framework */; };
 		C569D3220D85357B38162517 /* IdentifiedCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8EE51018E80AC8F5407138 /* IdentifiedCollections.framework */; platformFilter = ios; };
 		CA3C5B34CB02332D256C0F40 /* GenericTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873AC04DFEA6138A54ADF4C7 /* GenericTests.swift */; };
+		DDD9B140890C167007A663D4 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9584777B66C741BCAF65A8F9 /* RootCoordinator.swift */; };
 		E1B20AA42CDA58E035A15E78 /* OrderedCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31132FAD6C4B22836872AA9F /* OrderedCollections.framework */; platformFilter = ios; };
 		E5D0FF77E30336E79E12E43A /* TCACoordinators.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105B218D0F2364ED1CEA1479 /* TCACoordinators.framework */; platformFilter = ios; };
 		EDDB0C58BB47F59E9B848E38 /* CombineSchedulers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AB2B446D5D95B4A89430A3 /* CombineSchedulers.framework */; platformFilter = ios; };
@@ -77,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F2FDA1E26AD0F0B30D722E6 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		105B218D0F2364ED1CEA1479 /* TCACoordinators.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TCACoordinators.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F567A499230001970B9CB24 /* GenericTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GenericTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		270B70FEF3AA14D5A7D55383 /* Introspect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Introspect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,11 +98,19 @@
 		51336D98B5C9D8656E822DD8 /* XCTestDynamicOverlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCTestDynamicOverlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F9DAD65F12B16556C7961F /* ThirdPartyLibrary.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ThirdPartyLibrary.plist; sourceTree = "<group>"; };
 		79C2EA3F5632D5E502178CC9 /* RootCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCore.swift; sourceTree = "<group>"; };
+		7E8DF5B12884E167005EBEE7 /* InstagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
+		7E8DF5B32884E170005EBEE7 /* InstagramCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCore.swift; sourceTree = "<group>"; };
+		7E8DF5B62884F3A4005EBEE7 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		7E8DF5B82884F3AB005EBEE7 /* SettingCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCore.swift; sourceTree = "<group>"; };
+		7E8DF5BB2884FC10005EBEE7 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		7E8DF5BD2884FC16005EBEE7 /* DashboardCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCore.swift; sourceTree = "<group>"; };
 		85517BC75EC97939A8E80A9D /* FlowStacks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlowStacks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F2C7A6E195E37831CFD4ED /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873AC04DFEA6138A54ADF4C7 /* GenericTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTests.swift; sourceTree = "<group>"; };
 		8A8EE51018E80AC8F5407138 /* IdentifiedCollections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IdentifiedCollections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9584777B66C741BCAF65A8F9 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		A22753BE1254A184AAC879E8 /* GenericTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = GenericTests.plist; sourceTree = "<group>"; };
+		A8B6DFFE24F37B995586FB86 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		AB9B70D4E52FBDC9347132F1 /* ThirdPartyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7AB2B446D5D95B4A89430A3 /* CombineSchedulers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CombineSchedulers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C980AD23DC7900C09AEFEC63 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -144,6 +162,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		442E1E8CEFE3EFC2B33164A0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FDA1E26AD0F0B30D722E6 /* BlurView.swift */,
+				A8B6DFFE24F37B995586FB86 /* NavigationBar.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		49BDA28B35F77B6BB678F82F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +195,33 @@
 				49BDA28B35F77B6BB678F82F /* Tests */,
 			);
 			path = Generic;
+			sourceTree = "<group>";
+		};
+		7E8DF5B02884E15B005EBEE7 /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				7E8DF5B12884E167005EBEE7 /* InstagramView.swift */,
+				7E8DF5B32884E170005EBEE7 /* InstagramCore.swift */,
+			);
+			path = Instagram;
+			sourceTree = "<group>";
+		};
+		7E8DF5B52884F392005EBEE7 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				7E8DF5B62884F3A4005EBEE7 /* SettingView.swift */,
+				7E8DF5B82884F3AB005EBEE7 /* SettingCore.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		7E8DF5BA2884FC04005EBEE7 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				7E8DF5BB2884FC10005EBEE7 /* DashboardView.swift */,
+				7E8DF5BD2884FC16005EBEE7 /* DashboardCore.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		80CD78C3C264ECFF38201ADF /* Project */ = {
@@ -201,12 +255,25 @@
 		9B59D9E265AB6C46FDEE38A7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7E8DF5BA2884FC04005EBEE7 /* Dashboard */,
+				7E8DF5B52884F392005EBEE7 /* Setting */,
+				7E8DF5B02884E15B005EBEE7 /* Instagram */,
+				442E1E8CEFE3EFC2B33164A0 /* Components */,
+				9DDDE46E5C8789245301B6ED /* Coordinator */,
 				79C2EA3F5632D5E502178CC9 /* RootCore.swift */,
 				C980AD23DC7900C09AEFEC63 /* RootView.swift */,
 				3B0E656F20A02A63CA8B65D6 /* SplashCore.swift */,
 				2AD0A7EFF1C03468E6A858B4 /* SplashView.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		9DDDE46E5C8789245301B6ED /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9584777B66C741BCAF65A8F9 /* RootCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		A462393878A35329E0407AE0 /* Products */ = {
@@ -303,8 +370,6 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = tuist.io;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = BD9A1348460692C167AE5B85 /* Build configuration list for PBXProject "Generic" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -319,9 +384,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B51088EF36F4EABF775A647 /* GenericTests */,
-				3CC135827D5F04608CF88C95 /* ThirdPartyLibrary */,
 				E353085835FD70D05B028E79 /* Generic */,
+				3CC135827D5F04608CF88C95 /* ThirdPartyLibrary */,
+				2B51088EF36F4EABF775A647 /* GenericTests */,
 			);
 		};
 /* End PBXProject section */
@@ -363,10 +428,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A62FB5EB06CA8151ABF524F2 /* BlurView.swift in Sources */,
+				7E8DF5BC2884FC10005EBEE7 /* DashboardView.swift in Sources */,
+				7E8DF5B72884F3A4005EBEE7 /* SettingView.swift in Sources */,
+				7E8DF5BE2884FC16005EBEE7 /* DashboardCore.swift in Sources */,
+				46CCFDEEF1579BCEF20EC8E2 /* NavigationBar.swift in Sources */,
+				7E8DF5B42884E170005EBEE7 /* InstagramCore.swift in Sources */,
+				DDD9B140890C167007A663D4 /* RootCoordinator.swift in Sources */,
 				F84A4560602A35BF47F89827 /* RootCore.swift in Sources */,
+				7E8DF5B92884F3AB005EBEE7 /* SettingCore.swift in Sources */,
 				97CC04BEECDAE80514C127C0 /* RootView.swift in Sources */,
 				03D17EF7ACB207072AB78BD6 /* SplashCore.swift in Sources */,
 				975C026ED4CF7529F85932C2 /* SplashView.swift in Sources */,
+				7E8DF5B22884E167005EBEE7 /* InstagramView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +480,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Derived/InfoPlists/Generic.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -415,6 +490,7 @@
 				PRODUCT_NAME = Generic;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -616,6 +692,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Derived/InfoPlists/Generic.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -625,6 +702,7 @@
 				PRODUCT_NAME = Generic;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.6.1;

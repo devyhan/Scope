@@ -17,10 +17,13 @@ typealias AppScreenReducer = Reducer<AppScreenState, AppScreenAction, AppEnviron
 
 enum AppScreenState: Equatable, Identifiable {
   case root(RootState)
+  case setting(SettingState)
   
   var id: UUID {
     switch self {
     case let .root(state):
+      return state.id
+    case let .setting(state):
       return state.id
     }
   }
@@ -28,6 +31,7 @@ enum AppScreenState: Equatable, Identifiable {
 
 enum AppScreenAction {
   case root(RootAction)
+  case setting(SettingAction)
 }
 
 let appScreenReducer: AppScreenReducer = AppScreenReducer.combine(
@@ -36,6 +40,12 @@ let appScreenReducer: AppScreenReducer = AppScreenReducer.combine(
       state: /AppScreenState.root,
       action: /AppScreenAction.root,
       environment: { $0.rootEnvironment }
+    ),
+  settingReducer
+    .pullback(
+      state: /AppScreenState.setting,
+      action: /AppScreenAction.setting,
+      environment: { $0.settingEnvironment }
     )
 )
 
@@ -66,35 +76,47 @@ let appCoordinatorReducer: AppCoordinatorReducer = AppCoordinatorReducer.combine
     .withRouteReducer(
       Reducer { state, action, environment in
         switch action {
+        case .routeAction(_, action: .root(.rootCoordinator(.routeAction(_, action: .dashboard(.pushToSettingView))))):
+          state.routes.push(.setting(.init()))
+          
         default:
-          return .none
+          break
         }
+        return .none
       }
     )
 )
 
 struct AppCoordinator: View {
   private let store: Store<AppCoordinatorState, AppCoordinatorAction>
+  private let statelessViewStore: ViewStore<Void, AppCoordinatorAction>
   
   init(store: Store<AppCoordinatorState, AppCoordinatorAction>) {
     self.store = store
+    self.statelessViewStore = .init(store.stateless)
   }
   
   var body: some View {
     TCARouter(store) { screen in
       ZStack {
-        
         SwitchStore(screen) {
           CaseLet(
             state: /AppScreenState.root,
             action: AppScreenAction.root,
             then: RootView.init
           )
+          
+          CaseLet(
+            state: /AppScreenState.setting,
+            action: AppScreenAction.setting,
+            then: SettingView.init
+          )
         }
-        .navigationBarHidden(true)
-        .navigationBarTitle(String())
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationViewStyle(StackNavigationViewStyle())
+//        .navigationBarHidden(true)
+//        .navigationBarTitle(String())
+//        .navigationBarTitleDisplayMode(.inline)
+//        .navigationViewStyle(StackNavigationViewStyle())
+        
         
         WithViewStore(store.scope(state: \.splash)) { splash in
           SplashView(
