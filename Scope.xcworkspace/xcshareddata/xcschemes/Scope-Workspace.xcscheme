@@ -98,6 +98,62 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "346C56B93BD9A2E09C5796CF"
+               BuildableName = "DataAccess.framework"
+               BlueprintName = "DataAccess"
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C54AAE2F7D7B0CE3D80C1082"
+               BuildableName = "DataAccessTests.xctest"
+               BlueprintName = "DataAccessTests"
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "807407E315506D4E1A18C7E1"
+               BuildableName = "Domain.framework"
+               BlueprintName = "Domain"
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4433F87CBA584949D7ED62BF"
+               BuildableName = "DomainTests.xctest"
+               BlueprintName = "DomainTests"
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "1BB2F3B874D5162454B43154"
                BuildableName = "FlowStacks.framework"
                BlueprintName = "FlowStacks"
@@ -182,6 +238,34 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "68197A847030BD31CFC0FC08"
+               BuildableName = "Presentation.framework"
+               BlueprintName = "Presentation"
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E928BBD4BD7EAA37B05D190B"
+               BuildableName = "PresentationTests.xctest"
+               BlueprintName = "PresentationTests"
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "3AF3F349EB5391BC0A46BC8C"
                BuildableName = "TCACoordinators.framework"
                BlueprintName = "TCACoordinators"
@@ -238,9 +322,39 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C54AAE2F7D7B0CE3D80C1082"
+               BuildableName = "DataAccessTests.xctest"
+               BlueprintName = "DataAccessTests"
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4433F87CBA584949D7ED62BF"
+               BuildableName = "DomainTests.xctest"
+               BlueprintName = "DomainTests"
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B51088EF36F4EABF775A647"
                BuildableName = "GenericTests.xctest"
                BlueprintName = "GenericTests"
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E928BBD4BD7EAA37B05D190B"
+               BuildableName = "PresentationTests.xctest"
+               BlueprintName = "PresentationTests"
                ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
             </BuildableReference>
          </TestableReference>

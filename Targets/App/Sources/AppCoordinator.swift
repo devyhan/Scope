@@ -117,7 +117,6 @@ struct AppCoordinator: View {
 //        .navigationBarTitleDisplayMode(.inline)
 //        .navigationViewStyle(StackNavigationViewStyle())
         
-        
         WithViewStore(store.scope(state: \.splash)) { splash in
           SplashView(
             store: store.scope(

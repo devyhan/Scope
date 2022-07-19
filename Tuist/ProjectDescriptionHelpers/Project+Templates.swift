@@ -22,12 +22,15 @@ extension Project {
   
   public static func framework(name: String, platform: Platform, additionalTargets: [String]) -> Project {
     var targets = makeFrameworkTargets(
-      name: name,
+      targetName: name,
       platform: platform,
-      dependencies: additionalTargets.map { TargetDependency.target(name: $0) }
+      dependencies: additionalTargets.filter { $0 != "Domain" }.filter { $0 != "ThirdPartyLibrary" }.map { TargetDependency.target(name: $0) }
     )
-    
-    targets += thirdpartyLibraryTargets(name: "ThirdPartyLibrary", platform: platform)
+
+    targets += additionalTargets
+      .filter { $0 != "ThirdPartyLibrary" }
+      .flatMap { makeFrameworkTargets(projectName: name, targetName: $0, platform: platform, dependencies: $0 != "Domain" ? [.target(name: "Domain")] : [.target(name: "ThirdPartyLibrary")]) }
+    targets += thirdPartyLibraryTargets(name: "ThirdPartyLibrary", platform: platform)
     
     return Project(
       name: name,
@@ -38,7 +41,7 @@ extension Project {
   
   // MARK: - Private
   
-  private static func thirdpartyLibraryTargets(name: String, platform: Platform) -> [Target] {
+  private static func thirdPartyLibraryTargets(name: String, platform: Platform) -> [Target] {
     let sources = Target(
       name: name,
       platform: platform,
@@ -55,27 +58,27 @@ extension Project {
     return [sources]
   }
   
-  private static func makeFrameworkTargets(name: String, platform: Platform, dependencies: [TargetDependency] = []) -> [Target] {
+  private static func makeFrameworkTargets(projectName: String = String(), targetName: String, platform: Platform, dependencies: [TargetDependency] = []) -> [Target] {
     let sources = Target(
-      name: name,
+      name: targetName,
       platform: platform,
       product: .framework,
-      bundleId: "\(env.bundleId).\(name)",
+      bundleId: projectName != String() ? "\(env.bundleId).\(projectName).\(targetName)" : "\(env.bundleId).\(targetName)",
       deploymentTarget: .iOS(targetVersion: env.targetVersion, devices: [.iphone, .ipad]),
       infoPlist: .default,
-      sources: ["../../Targets/\(name)/Sources/**"],
+      sources: projectName != String() ? ["../../Targets/\(projectName)/Sources/\(targetName)/**"] : ["../../Targets/\(targetName)/Sources/**"],
       resources: [],
       dependencies: dependencies
     )
     let tests = Target(
-      name: "\(name)Tests",
+      name: "\(targetName)Tests",
       platform: platform,
       product: .unitTests,
-      bundleId: "\(env.bundleId).\(name)Tests",
+      bundleId: projectName != String() ? "\(env.bundleId).\(projectName).\(targetName)Tests" : "\(env.bundleId).\(targetName)Tests",
       infoPlist: .default,
-      sources: ["../../Targets/\(name)/Tests/**"],
+      sources: projectName != String() ? ["../../Targets/\(projectName)/Tests/\(targetName)/**"] : ["../../Targets/\(targetName)/Tests/**"],
       resources: [],
-      dependencies: [.target(name: name)]
+      dependencies: [.target(name: targetName)]
     )
     return [sources, tests]
   }
