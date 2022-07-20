@@ -24,12 +24,21 @@ extension Project {
     var targets = makeFrameworkTargets(
       targetName: name,
       platform: platform,
-      dependencies: additionalTargets.filter { $0 != "Domain" }.filter { $0 != "ThirdPartyLibrary" }.map { TargetDependency.target(name: $0) }
+//      dependencies: additionalTargets.filter { $0 != "Domain" }.filter { $0 != "ThirdPartyLibrary" }.map { TargetDependency.target(name: $0) }
+      dependencies: additionalTargets.map { TargetDependency.target(name: $0) } + [ .target(name: "\(name)Presentation"), .target(name: "\(name)DataAccess") ]
     )
 
-    targets += additionalTargets
-      .filter { $0 != "ThirdPartyLibrary" }
-      .flatMap { makeFrameworkTargets(projectName: name, targetName: $0, platform: platform, dependencies: $0 != "Domain" ? [.target(name: "Domain")] : [.target(name: "ThirdPartyLibrary")]) }
+//    targets += additionalTargets
+//      .filter { $0 != "ThirdPartyLibrary" }
+//      .flatMap { makeFrameworkTargets(projectName: name, targetName: $0, platform: platform, dependencies: $0 != "Domain" ? [.target(name: "Domain")] : [.target(name: "ThirdPartyLibrary")]) }
+//    targets += additionalTargets
+//      .filter { $0 != "ThirdPartyLibrary" }
+//      .flatMap { makeFrameworkTargets(projectName: name, targetName: $0, platform: platform, dependencies: $0 != "Domain" ? [.target(name: "Domain")] : [.target(name: "ThirdPartyLibrary")]) }
+    
+    
+    targets += makeLayerTargets(projectName: name, targetName: "\(name)Presentation", platform: platform, dependencies: [.target(name: "\(name)Domain")])
+    targets += makeLayerTargets(projectName: name, targetName: "\(name)DataAccess", platform: platform, dependencies: [.target(name: "\(name)Domain")])
+    targets += makeLayerTargets(projectName: name, targetName: "\(name)Domain", platform: platform, dependencies: [.target(name: "ThirdPartyLibrary")])
     targets += thirdPartyLibraryTargets(name: "ThirdPartyLibrary", platform: platform)
     
     return Project(
@@ -58,6 +67,20 @@ extension Project {
     return [sources]
   }
   
+  private static func makeLayerTargets(projectName: String = String(), targetName: String, platform: Platform, dependencies: [TargetDependency] = []) -> [Target] {
+    let sources = Target(
+      name: targetName,
+      platform: platform,
+      product: .framework,
+      bundleId: projectName != String() ? "\(env.bundleId).\(projectName).\(targetName)" : "\(env.bundleId).\(targetName)",
+      deploymentTarget: .iOS(targetVersion: env.targetVersion, devices: [.iphone, .ipad]),
+      sources: ["../../Targets/\(projectName)/Sources/\(targetName.contains("Presentation") ? "Presentation" : targetName.contains("Domain") ? "Domain" : targetName.contains("DataAccess") ? "DataAccess" : targetName)/**"],
+      resources: [],
+      dependencies: dependencies
+    )
+    return [sources]
+  }
+  
   private static func makeFrameworkTargets(projectName: String = String(), targetName: String, platform: Platform, dependencies: [TargetDependency] = []) -> [Target] {
     let sources = Target(
       name: targetName,
@@ -66,7 +89,7 @@ extension Project {
       bundleId: projectName != String() ? "\(env.bundleId).\(projectName).\(targetName)" : "\(env.bundleId).\(targetName)",
       deploymentTarget: .iOS(targetVersion: env.targetVersion, devices: [.iphone, .ipad]),
       infoPlist: .default,
-      sources: projectName != String() ? ["../../Targets/\(projectName)/Sources/\(targetName)/**"] : ["../../Targets/\(targetName)/Sources/**"],
+      sources: ["../../Targets/\(targetName)/Sources/**"],
       resources: [],
       dependencies: dependencies
     )
@@ -80,7 +103,11 @@ extension Project {
       resources: [],
       dependencies: [.target(name: targetName)]
     )
-    return [sources, tests]
+    if targetName != "Domain" && targetName != "Presentation" && targetName != "DataAccess" {
+      return [sources, tests]
+    } else {
+      return [sources]
+    }
   }
   
   private static func makeAppTargets(name: String, platform: Platform, dependencies: [TargetDependency]) -> [Target] {

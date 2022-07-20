@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "68197A847030BD31CFC0FC08"
-               BuildableName = "Presentation.framework"
-               BlueprintName = "Presentation"
+               BlueprintIdentifier = "83C8B6149542E05C0C4407FF"
+               BuildableName = "GenericPresentation.framework"
+               BlueprintName = "GenericPresentation"
                ReferencedContainer = "container:Generic.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,18 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      disableMainThreadChecker = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E928BBD4BD7EAA37B05D190B"
-               BuildableName = "PresentationTests.xctest"
-               BlueprintName = "PresentationTests"
-               ReferencedContainer = "container:Generic.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -53,9 +44,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "68197A847030BD31CFC0FC08"
-            BuildableName = "Presentation.framework"
-            BlueprintName = "Presentation"
+            BlueprintIdentifier = "83C8B6149542E05C0C4407FF"
+            BuildableName = "GenericPresentation.framework"
+            BlueprintName = "GenericPresentation"
             ReferencedContainer = "container:Generic.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -69,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "68197A847030BD31CFC0FC08"
-            BuildableName = "Presentation.framework"
-            BlueprintName = "Presentation"
+            BlueprintIdentifier = "83C8B6149542E05C0C4407FF"
+            BuildableName = "GenericPresentation.framework"
+            BlueprintName = "GenericPresentation"
             ReferencedContainer = "container:Generic.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

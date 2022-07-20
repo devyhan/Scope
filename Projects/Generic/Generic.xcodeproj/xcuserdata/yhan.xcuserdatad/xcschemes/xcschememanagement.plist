@@ -4,28 +4,28 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>DataAccess.xcscheme_^#shared#^_</key>
+		<key>Generic.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Domain.xcscheme_^#shared#^_</key>
+		<key>GenericDataAccess.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>Generic.xcscheme_^#shared#^_</key>
+		<key>GenericDomain.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>Presentation.xcscheme_^#shared#^_</key>
+		<key>GenericPresentation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
