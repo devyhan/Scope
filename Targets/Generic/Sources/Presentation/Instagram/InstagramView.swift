@@ -19,6 +19,14 @@ public struct InstagramView: View {
   }
   
   public var body: some View {
-    Text("InstagramView")
+    ZStack {
+      Color.black
+      Text("InstagramView")
+    }
+    .onTapGesture(perform: endEditing)
+  }
+  
+  private func endEditing() {
+    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
   }
 }

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "346C56B93BD9A2E09C5796CF"
-               BuildableName = "DataAccess.framework"
-               BlueprintName = "DataAccess"
+               BlueprintIdentifier = "2F931BF91616D42CBBD08334"
+               BuildableName = "GenericDataAccess.framework"
+               BlueprintName = "GenericDataAccess"
                ReferencedContainer = "container:Generic.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,18 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      disableMainThreadChecker = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C54AAE2F7D7B0CE3D80C1082"
-               BuildableName = "DataAccessTests.xctest"
-               BlueprintName = "DataAccessTests"
-               ReferencedContainer = "container:Generic.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -53,9 +44,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "346C56B93BD9A2E09C5796CF"
-            BuildableName = "DataAccess.framework"
-            BlueprintName = "DataAccess"
+            BlueprintIdentifier = "2F931BF91616D42CBBD08334"
+            BuildableName = "GenericDataAccess.framework"
+            BlueprintName = "GenericDataAccess"
             ReferencedContainer = "container:Generic.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -69,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "346C56B93BD9A2E09C5796CF"
-            BuildableName = "DataAccess.framework"
-            BlueprintName = "DataAccess"
+            BlueprintIdentifier = "2F931BF91616D42CBBD08334"
+            BuildableName = "GenericDataAccess.framework"
+            BlueprintName = "GenericDataAccess"
             ReferencedContainer = "container:Generic.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

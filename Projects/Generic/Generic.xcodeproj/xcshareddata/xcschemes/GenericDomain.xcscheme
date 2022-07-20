@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "807407E315506D4E1A18C7E1"
-               BuildableName = "Domain.framework"
-               BlueprintName = "Domain"
+               BlueprintIdentifier = "E981CA46FB111D9923E9781E"
+               BuildableName = "GenericDomain.framework"
+               BlueprintName = "GenericDomain"
                ReferencedContainer = "container:Generic.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,18 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      disableMainThreadChecker = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4433F87CBA584949D7ED62BF"
-               BuildableName = "DomainTests.xctest"
-               BlueprintName = "DomainTests"
-               ReferencedContainer = "container:Generic.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -53,9 +44,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "807407E315506D4E1A18C7E1"
-            BuildableName = "Domain.framework"
-            BlueprintName = "Domain"
+            BlueprintIdentifier = "E981CA46FB111D9923E9781E"
+            BuildableName = "GenericDomain.framework"
+            BlueprintName = "GenericDomain"
             ReferencedContainer = "container:Generic.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -69,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "807407E315506D4E1A18C7E1"
-            BuildableName = "Domain.framework"
-            BlueprintName = "Domain"
+            BlueprintIdentifier = "E981CA46FB111D9923E9781E"
+            BuildableName = "GenericDomain.framework"
+            BlueprintName = "GenericDomain"
             ReferencedContainer = "container:Generic.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

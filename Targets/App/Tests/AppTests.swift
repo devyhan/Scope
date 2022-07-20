@@ -3,16 +3,15 @@ import XCTest
 @testable import App
 
 final class ScopeTests: XCTestCase {
-  private func test_twoPlusTwo_isFour() {
-    // given
-//    let store = TestStore(
-//      initialState: AppCoordinatorState(),
-//      reducer: appCoordinatorReducer,
-//      environment: AppEnvironment(mainQueue: .main)
-//    )
+  func test_close_splash_screen_after_version_check() {
+    let store = TestStore(
+      initialState: AppCoordinatorState(),
+      reducer: appCoordinatorReducer,
+      environment: .mock
+    )
     
-    // when
-//    store.send(.routeAction(.))
-    // then
+    store.send(.splash(.checkVersion)) { state in
+      state.splash.isHidden = true
+    }
   }
 }

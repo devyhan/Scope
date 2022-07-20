@@ -9,6 +9,5 @@ let project = Project.app(
   additionalProjects: [
     "Generic"
   ],
-  additionalTargets: [
-  ]
+  additionalTargets: [ ]
 )
