@@ -224,6 +224,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2B14AB2C8EC7EE86EEB31CF5"
+               BuildableName = "Resources.framework"
+               BlueprintName = "Resources"
+               ReferencedContainer = "container:Projects/Generic/Generic.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "3AF3F349EB5391BC0A46BC8C"
                BuildableName = "TCACoordinators.framework"
                BlueprintName = "TCACoordinators"
