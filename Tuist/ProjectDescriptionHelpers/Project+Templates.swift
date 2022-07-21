@@ -7,16 +7,13 @@ extension Project {
       name: name,
       platform: platform,
       dependencies: additionalTargets.map { TargetDependency.target(name: $0) } + additionalProjects.map { TargetDependency.project(target: $0, path: .relativeToRoot("Projects/\($0)")) }
-      //      dependencies: additionalTargets.map { TargetDependency.project(target: $0, path: .relativeToRoot("Projects/\($0)")) }
     )
-    
-    //    targets += additionalTargets.flatMap({ makeFrameworkTargets(name: $0, platform: platform) })
-    //    targets += additionalProjects.flatMap({ makeFrameworkTargets(name: $0, platform: platform) })
     
     return Project(
       name: name,
       organizationName: env.orgenizationName,
-      targets: targets
+      targets: targets,
+      resourceSynthesizers: [.assets(), .strings(), .plists()]
     )
   }
   
@@ -24,22 +21,14 @@ extension Project {
     var targets = makeFrameworkTargets(
       targetName: name,
       platform: platform,
-//      dependencies: additionalTargets.filter { $0 != "Domain" }.filter { $0 != "ThirdPartyLibrary" }.map { TargetDependency.target(name: $0) }
       dependencies: additionalTargets.map { TargetDependency.target(name: $0) } + [ .target(name: "\(name)Presentation"), .target(name: "\(name)DataAccess") ]
     )
-
-//    targets += additionalTargets
-//      .filter { $0 != "ThirdPartyLibrary" }
-//      .flatMap { makeFrameworkTargets(projectName: name, targetName: $0, platform: platform, dependencies: $0 != "Domain" ? [.target(name: "Domain")] : [.target(name: "ThirdPartyLibrary")]) }
-//    targets += additionalTargets
-//      .filter { $0 != "ThirdPartyLibrary" }
-//      .flatMap { makeFrameworkTargets(projectName: name, targetName: $0, platform: platform, dependencies: $0 != "Domain" ? [.target(name: "Domain")] : [.target(name: "ThirdPartyLibrary")]) }
-    
     
     targets += makeLayerTargets(projectName: name, targetName: "\(name)Presentation", platform: platform, dependencies: [.target(name: "\(name)Domain")])
     targets += makeLayerTargets(projectName: name, targetName: "\(name)DataAccess", platform: platform, dependencies: [.target(name: "\(name)Domain")])
-    targets += makeLayerTargets(projectName: name, targetName: "\(name)Domain", platform: platform, dependencies: [.target(name: "ThirdPartyLibrary")])
+    targets += makeLayerTargets(projectName: name, targetName: "\(name)Domain", platform: platform, dependencies: [.target(name: "ThirdPartyLibrary"), .target(name: "Resources")])
     targets += thirdPartyLibraryTargets(name: "ThirdPartyLibrary", platform: platform)
+    targets += resourcesTargets(platform: platform)
     
     return Project(
       name: name,
@@ -56,6 +45,7 @@ extension Project {
       platform: platform,
       product: .framework,
       bundleId: "\(env.bundleId).\(name)",
+      deploymentTarget: .iOS(targetVersion: env.targetVersion, devices: [.iphone, .ipad]),
       sources: [],
       resources: [],
       dependencies: [
@@ -63,6 +53,20 @@ extension Project {
         .external(name: "TCACoordinators"),
         .external(name: "Introspect")
       ]
+    )
+    return [sources]
+  }
+  
+  private static func resourcesTargets(platform: Platform) -> [Target] {
+    let sources = Target(
+      name: "Resources",
+      platform: platform,
+      product: .framework,
+      bundleId: "\(env.bundleId).Resources",
+      deploymentTarget: .iOS(targetVersion: env.targetVersion, devices: [.iphone, .ipad]),
+      sources: [],
+      resources: ["../../Targets/App/Resources/**"],
+      dependencies: []
     )
     return [sources]
   }
@@ -126,7 +130,7 @@ extension Project {
       deploymentTarget: .iOS(targetVersion: env.targetVersion, devices: [.iphone, .ipad]),
       infoPlist: .extendingDefault(with: infoPlist),
       sources: ["../../Targets/\(name)/Sources/**"],
-      resources: ["../../Targets/\(name)/Resources/**"],
+      resources: [],
       dependencies: dependencies
     )
     
