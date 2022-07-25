@@ -24,13 +24,13 @@ public enum RootAction {
 public final class RootEnvironment {
   private let mainQueue: AnySchedulerOf<DispatchQueue>
   public let splash: SplashEnvironment
-  public let dashboard: DashboardEnvironment
+  public let main: MainEnvironment
   public let instagram: InstagramEnvironment
   
   public init(mainQueue: AnySchedulerOf<DispatchQueue>) {
     self.mainQueue = mainQueue
     self.splash = SplashEnvironment(mainQueue: mainQueue)
-    self.dashboard = DashboardEnvironment()
+    self.main = MainEnvironment()
     self.instagram = InstagramEnvironment()
   }
 }

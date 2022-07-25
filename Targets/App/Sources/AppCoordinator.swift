@@ -76,7 +76,7 @@ let appCoordinatorReducer: AppCoordinatorReducer = AppCoordinatorReducer.combine
     .withRouteReducer(
       Reducer { state, action, environment in
         switch action {
-        case .routeAction(_, action: .root(.rootCoordinator(.routeAction(_, action: .dashboard(.pushToSettingView))))):
+        case .routeAction(_, action: .root(.rootCoordinator(.routeAction(_, action: .main(.pushToSettingView))))):
           state.routes.push(.setting(.init()))
           
         default:
