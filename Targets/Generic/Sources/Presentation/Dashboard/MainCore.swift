@@ -1,5 +1,5 @@
 //
-//  DashboardCore.swift
+//  MainCore.swift
 //  Generic
 //
 //  Created by YHAN on 2022/07/18.
@@ -8,22 +8,22 @@
 
 import ComposableArchitecture
 
-public typealias DashboardReducer = Reducer<DashboardState, DashboardAction, DashboardEnvironment>
+public typealias MainReducer = Reducer<MainState, MainAction, MainEnvironment>
 
-public struct DashboardState: Equatable {
+public struct MainState: Equatable {
   public let id: UUID = .init()
   public init() {}
 }
 
-public enum DashboardAction {
+public enum MainAction {
   case pushToSettingView
 }
 
-public final class DashboardEnvironment {
+public final class MainEnvironment {
   public init() {}
 }
 
-public let dashboardReducer: DashboardReducer = DashboardReducer.combine(
+public let mainReducer: MainReducer = MainReducer.combine(
   .init() { state, action, environment in
     switch action {
     default:

@@ -1,5 +1,5 @@
 //
-//  DashboardView.swift
+//  MainView.swift
 //  Generic
 //
 //  Created by YHAN on 2022/07/18.
@@ -8,12 +8,13 @@
 
 import ComposableArchitecture
 import SwiftUI
+import MapKit
 
-public struct DashboardView: View {
-  private let store: Store<DashboardState, DashboardAction>
-  private let statelessViewStore: ViewStore<Void, DashboardAction>
+public struct MainView: View {
+  private let store: Store<MainState, MainAction>
+  private let statelessViewStore: ViewStore<Void, MainAction>
   
-  init(store: Store<DashboardState, DashboardAction>) {
+  init(store: Store<MainState, MainAction>) {
     self.store = store
     self.statelessViewStore = .init(store.stateless)
   }
@@ -21,14 +22,12 @@ public struct DashboardView: View {
   public var body: some View {
     WithViewStore(store) { viewStore in
       ZStack {
-        Color.blue
+        MapView(
+          mapViewDidChangeVisibleRegion: mapViewDidChangeVisibleRegion
+        )
+          .ignoresSafeArea()
       }
     }
-    .navigationBar(
-      title: "DashBoard",
-      leftBarButtonItem: { EmptyView() },
-      rightBarButtonItem: rightBarButtonItem
-    )
   }
   
   private func rightBarButtonItem() -> some View {
@@ -39,5 +38,13 @@ public struct DashboardView: View {
   
   private func rightBarButtonDidTap() {
     statelessViewStore.send(.pushToSettingView)
+  }
+}
+
+// MARK: - MapViewDelegate
+
+extension MainView {
+  private func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+    print(mapView)
   }
 }

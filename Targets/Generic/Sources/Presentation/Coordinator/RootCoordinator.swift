@@ -15,12 +15,12 @@ import TCACoordinators
 typealias RootScreenReducer = Reducer<RootScreenState, RootScreenAction, RootEnvironment>
 
 public enum RootScreenState: Equatable, Identifiable {
-  case dashboard(DashboardState)
+  case main(MainState)
   case instagram(InstagramState)
   
   public var id: UUID {
     switch self {
-    case let .dashboard(state):
+    case let .main(state):
       return state.id
       
     case let .instagram(state):
@@ -30,16 +30,16 @@ public enum RootScreenState: Equatable, Identifiable {
 }
 
 public enum RootScreenAction {
-  case dashboard(DashboardAction)
+  case main(MainAction)
   case instagram(InstagramAction)
 }
 
 let rootScreenReducer: RootScreenReducer = RootScreenReducer.combine(
-  dashboardReducer
+  mainReducer
     .pullback(
-      state: /RootScreenState.dashboard,
-      action: /RootScreenAction.dashboard,
-      environment: { $0.dashboard }
+      state: /RootScreenState.main,
+      action: /RootScreenAction.main,
+      environment: { $0.main }
     ),
   instagramReducer
     .pullback(
@@ -58,7 +58,7 @@ public struct RootCoordinatorState: Equatable, IdentifiedRouterState {
   @BindableState public var isSearchBarHidden: Bool = false
   public var depth: Int = 1
   
-  public var routes: IdentifiedArrayOf<Route<RootScreenState>> = [.root(.dashboard(.init()))]
+  public var routes: IdentifiedArrayOf<Route<RootScreenState>> = [.root(.main(.init()))]
 }
 
 public enum RootCoordinatorAction: BindableAction, IdentifiedRouterAction {
@@ -118,9 +118,9 @@ struct RootCoordinator: View {
       ZStack {
         SwitchStore(screen) {
           CaseLet(
-            state: /RootScreenState.dashboard,
-            action: RootScreenAction.dashboard,
-            then: DashboardView.init
+            state: /RootScreenState.main,
+            action: RootScreenAction.main,
+            then: MainView.init
           )
           
           CaseLet(
